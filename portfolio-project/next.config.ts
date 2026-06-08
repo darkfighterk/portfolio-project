@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/https://github.com/darkfighterk/portfolio-project.git",  
+  basePath: "/portfolio-project",  
     images: {
     unoptimized: true,
   },
