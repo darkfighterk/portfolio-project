@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const ROLES = ["Software Developer", "Full Stack Engineer", "UI/UX Enthusiast", "Open Source Contributor"];
 
 const STATS = [
-  { num: 12, label: "Years of\nexperience" },
-  { num: 26, label: "Projects\ncompleted" },
-  { num: 8,  label: "Technologies\nmastered" },
-  { num: 500, label: "Code\ncommits" },
+  { num: 3, label: "Years of\nexperience" },
+  { num: 10, label: "Projects\ncompleted" },
+  { num: 12,  label: "Technologies\nmastered" },
+  { num: 200, label: "Code\ncommits" },
 ];
 
 function useCountUp(target: number, duration = 1800) {
@@ -41,7 +42,7 @@ function StatItem({ num, label }: { num: number; label: string }) {
   const { val, ref } = useCountUp(num);
   return (
     <div ref={ref} className="stat-item">
-      <div className="stat-num">{val}{num === 500 ? "" : ""}</div>
+      <div className="stat-num">{val}</div>
       <div className="stat-label">{label}</div>
     </div>
   );
@@ -157,7 +158,7 @@ export default function Hero() {
           padding: 0.75rem 1.6rem; border-radius: 100px;
           border: 2px solid #00ff88; background: transparent;
           transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
-          cursor: pointer;
+          cursor: pointer; text-decoration: none;
         }
         .btn-cv:hover {
           background: #00ff88; color: #141414;
@@ -172,6 +173,7 @@ export default function Hero() {
           color: rgba(255,255,255,0.50);
           transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s;
           background: rgba(255,255,255,0.03);
+          text-decoration: none;
         }
         .soc:hover {
           border-color: #00ff88; color: #00ff88;
@@ -208,7 +210,6 @@ export default function Hero() {
           border-color: rgba(0,255,136,0.45);
           border-style: dashed;
         }
-        /* Gaps in the circles — achieved via conic mask */
         .circle-1 { border-top-color: transparent; border-left-color: transparent; }
         .circle-2 { border-bottom-color: transparent; border-right-color: transparent; }
 
@@ -219,7 +220,7 @@ export default function Hero() {
           box-shadow: 0 0 60px rgba(0,255,136,0.15);
         }
 
-        /* Avatar photo placeholder */
+        /* Avatar */
         .avatar {
           position: relative; z-index: 2;
           width: 230px; height: 230px; border-radius: 50%;
@@ -227,24 +228,6 @@ export default function Hero() {
           border: 3px solid rgba(0,255,136,0.3);
           box-shadow: 0 0 40px rgba(0,255,136,0.2), inset 0 0 40px rgba(0,0,0,0.5);
           background: #1a1a1a;
-        }
-        /* Replace the below with <Image src="/avatar.jpg" fill ... /> */
-        .avatar-placeholder {
-          width: 100%; height: 100%;
-          background: linear-gradient(160deg, #1e2a1e 0%, #0d1a0d 100%);
-          display: flex; align-items: flex-end; justify-content: center;
-          overflow: hidden;
-        }
-        .avatar-silhouette {
-          width: 160px; height: 200px;
-          background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
-          border-radius: 80px 80px 0 0;
-          position: relative; bottom: -10px;
-        }
-        .avatar-head {
-          width: 90px; height: 90px; border-radius: 50%;
-          background: #2e2e2e;
-          position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
         }
 
         /* ── STATS ── */
@@ -298,7 +281,7 @@ export default function Hero() {
             <div className="hero-left">
               <p className="hero-role">Software Developer</p>
               <h1 className="hero-h1">Hello I&apos;m</h1>
-              <div className="hero-name">Luke Coleman</div>
+              <div className="hero-name">Anjana Tharindu</div>
 
               <p className="hero-typewriter">
                 &gt; <span className="tw-text">{displayed}</span>
@@ -311,16 +294,36 @@ export default function Hero() {
               </p>
 
               <div className="hero-actions">
-                <a href="/resume.pdf" className="btn-cv" download>
+                <a href="/assets/cv.pdf" className="btn-cv" download>
                   Download CV
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
                 </a>
                 <div className="socials">
                   {[
-                    { title: "GitHub", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>, href: "https://github.com" },
-                    { title: "LinkedIn", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>, href: "https://linkedin.com" },
-                    { title: "YouTube", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#141414"/></svg>, href: "https://youtube.com" },
-                    { title: "Twitter", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>, href: "https://twitter.com" },
+                    {
+                      title: "GitHub",
+                      href: "https://github.com/darkfighterk",
+                      icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>,
+                    },
+                    {
+                      title: "LinkedIn",
+                      href: "https://www.linkedin.com/in/anjana-tharindu-379ab137a",
+                      icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>,
+                    },
+                    {
+                      title: "YouTube",
+                      href: "https://youtube.com",
+                      icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#141414"/></svg>,
+                    },
+                    {
+                      title: "Twitter",
+                      href: "https://twitter.com",
+                      icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>,
+                    },
                   ].map((s) => (
                     <a key={s.title} href={s.href} className="soc" title={s.title} target="_blank" rel="noopener noreferrer">
                       {s.icon}
@@ -338,12 +341,13 @@ export default function Hero() {
                 <div className="circle circle-2" />
               </div>
               <div className="avatar">
-                {/* Replace with: <Image src="/avatar.jpg" alt="Luke Coleman" fill style={{objectFit:'cover'}} /> */}
-                <div className="avatar-placeholder">
-                  <div className="avatar-silhouette">
-                    <div className="avatar-head" />
-                  </div>
-                </div>
+                <Image
+                  src="/assets/pro.jpeg"
+                  alt="Anjana Tharindu"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  priority
+                />
               </div>
             </div>
           </div>

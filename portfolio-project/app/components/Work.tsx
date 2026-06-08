@@ -5,12 +5,61 @@ import { useState } from "react";
 const CATS = ["All", "Web App", "Mobile", "Design"];
 
 const WORKS = [
-  { num: "01", title: "E-Commerce Platform", cat: "Web App", year: "2024", tech: ["Next.js","Stripe","PostgreSQL"], desc: "Full-stack shopping platform with real-time inventory and payments.", accent: "#00ff88" },
-  { num: "02", title: "Fitness Tracker App", cat: "Mobile",  year: "2024", tech: ["React Native","Firebase"],    desc: "Cross-platform mobile app with workout logging and progress charts.", accent: "#00e5ff" },
-  { num: "03", title: "SaaS Dashboard",      cat: "Web App", year: "2023", tech: ["React","Node.js","Redis"],    desc: "Analytics dashboard with real-time data and role-based access.", accent: "#00ff88" },
-  { num: "04", title: "Brand Design System", cat: "Design",  year: "2023", tech: ["Figma","Storybook"],          desc: "60+ accessible components with tokens and developer handoff.", accent: "#ff6b6b" },
-  { num: "05", title: "Portfolio Template",  cat: "Web App", year: "2023", tech: ["Next.js","MDX","Framer"],     desc: "Open-source portfolio starter — 300+ GitHub stars.", accent: "#00ff88" },
-  { num: "06", title: "REST API Service",    cat: "Web App", year: "2022", tech: ["Node.js","Docker","Redis"],   desc: "Scalable API with JWT auth, caching, and Swagger docs.", accent: "#a8ff78" },
+  {
+    num: "01",
+    title: "LittleMinds — AI-Powered Student Learning Platform",
+    cat: "Mobile",
+    year: "2025",
+    tech: ["Flutter", "Firebase", "AI Integration", "JWT Auth"],
+    desc: "Mobile learning platform with role-based access control for students and administrators, secure token authentication, and AI-powered personalized learning experiences.",
+    accent: "#00ff88",
+    github: "https://github.com/darkfighterk/Little_Minds_App",
+    live: "#"
+  },
+  {
+    num: "02",
+    title: "Modern Fashion E-Commerce Platform",
+    cat: "Web App",
+    year: "2025",
+    tech: ["React", "Python", "3D Model", "AR Support"],
+    desc: "Full-stack fashion e-commerce platform featuring 3D product visualization, AR try-on functionality, secure authentication, and role-based access management.",
+    accent: "#00e5ff",
+    github: "https://github.com/darkfighterk/dashion_desgin",
+    live: "#"
+  },
+  {
+    num: "03",
+    title: "Auction Management System",
+    cat: "Web App",
+    year: "2025",
+    tech: ["React", "REST API", "Real-Time Bidding"],
+    desc: "Interactive auction platform supporting item listings, live bidding workflows, and real-time auction updates across multiple user sessions.",
+    accent: "#a8ff78",
+    github: "https://github.com/Bashi201/Auction-Management-Frontend",
+    live: "#"
+  },
+  {
+    num: "04",
+    title: "Shop Management Backend API",
+    cat: "Web App",
+    year: "2024",
+    tech: ["Node.js", "REST API", "SQL", "Authentication"],
+    desc: "Backend API for shop operations including inventory management, order processing, user management, and secure authentication mechanisms.",
+    accent: "#ff6b6b",
+    github: "https://github.com/darkfighterk/Shopmanagent_Back_end_api",
+    live: "#"
+  },
+  {
+    num: "05",
+    title: "Point of Sale (POS) System",
+    cat: "Web App",
+    year: "2024",
+    tech: ["Laravel", "PHP", "MySQL", "MVC"],
+    desc: "Comprehensive POS solution for retail businesses with sales processing, inventory tracking, reporting, and role-based administration.",
+    accent: "#00ff88",
+    github: "https://github.com/darkfighterk/POS_systerm_laravel",
+    live: "#"
+  }
 ];
 
 export default function Work() {
@@ -115,7 +164,7 @@ export default function Work() {
                 <div className="wcard-top">
                   <span className="wcard-num">{w.num}</span>
                   <div className="wcard-links">
-                    <a href="#" className="wl" title="GitHub">
+                    <a href="https://github.com/darkfighterk" className="wl" title="GitHub">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
                     </a>
                     <a href="#" className="wl" title="Live">

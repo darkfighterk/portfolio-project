@@ -181,7 +181,7 @@ export default function Navbar() {
       <nav className={`nb ${scrolled ? "stuck" : ""}`}>
         <div className="nb-inner">
           <a href="#home" className="nb-logo" onClick={() => setActive("Home")}>
-            Luke<span className="nb-logo-dot" />
+            Anajana<span className="nb-logo-dot" />
           </a>
 
           <ul className="nb-links">

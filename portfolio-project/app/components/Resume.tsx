@@ -1,23 +1,46 @@
 "use client";
 
 const EXP = [
-  { year: "2022 — Now",   role: "Senior Frontend Developer", company: "TechCorp Inc.",     desc: "Lead the frontend architecture for SaaS products serving 50k+ users. Built design systems, micro-frontends, and improved Core Web Vitals scores by 40%." },
-  { year: "2020 — 2022",  role: "Full Stack Developer",       company: "Digital Studio",   desc: "Developed full-stack applications with React, Node.js, and PostgreSQL. Shipped 8 client products on time and within budget." },
-  { year: "2018 — 2020",  role: "Junior Web Developer",       company: "Startup Hub",      desc: "Built responsive landing pages and e-commerce sites. Collaborated closely with designers to produce pixel-perfect implementations." },
+  {
+    year: "Present",
+    role: "Aspiring Software Engineer",
+    company: "Seeking Internship Opportunities",
+    desc: "Actively seeking internship opportunities to apply software engineering skills, gain industry experience, and contribute to real-world projects."
+  },
+  {
+    year: "2023 — Present",
+    role: "Software Engineering Undergraduate",
+    company: "NSBM Green University",
+    desc: "Pursuing a B.Sc. in Software Engineering while developing full-stack web and mobile applications using modern technologies."
+  },
+  {
+    year: "2021 — 2022",
+    role: "Computer Technician",
+    company: "Computer Repair & Sales Shop",
+    desc: "Provided computer repair, hardware troubleshooting, software installation, system maintenance, and technical support services."
+  }
 ];
+  
+
 
 const EDU = [
-  { year: "2014 — 2018", degree: "B.Sc. Computer Science",    school: "State University",   desc: "Focused on algorithms, data structures, and software engineering principles. Graduated with First Class Honours." },
-  { year: "2022",        degree: "AWS Certified Developer",    school: "Amazon Web Services", desc: "Associate-level certification covering core AWS services, architecture best practices, and cloud-native development." },
+  { year: "2023 — 2027", degree: "B.Sc. Software Engineer",    school: " NSBM Green University",   desc: "Pursuing a Bachelor's degree in Software Engineering with a focus on full-stack development, software design, database systems, algorithms, and modern web technologies." },
+  { year: "2022",        degree: "computer hardware and networking",    school: "VTC Dehiwala", desc: "Gained practical experience in computer hardware maintenance, networking, troubleshooting, and technical support." },
 ];
 
 const SKILLS = [
-  { name: "React / Next.js", pct: 95 },
-  { name: "TypeScript",       pct: 90 },
-  { name: "Node.js",          pct: 85 },
-  { name: "PostgreSQL",       pct: 80 },
-  { name: "Docker / AWS",     pct: 75 },
-  { name: "Figma / Design",   pct: 78 },
+  { name: "Java",               pct: 85 },
+  { name: "JavaScript",         pct: 85 },
+  { name: "React.js",           pct: 80 },
+  { name: "Next.js",            pct: 75 },
+  { name: "PHP / Laravel",      pct: 80 },
+  { name: "Flutter",            pct: 75 },
+  { name: "MySQL",              pct: 85 },
+  { name: "Oracle SQL / PLSQL", pct: 80 },
+  { name: "Node.js",            pct: 70 },
+  { name: "Git & GitHub",       pct: 85 },
+  { name: "HTML / CSS",         pct: 90 },
+  { name: "REST APIs",          pct: 75 },
 ];
 
 export default function Resume() {
