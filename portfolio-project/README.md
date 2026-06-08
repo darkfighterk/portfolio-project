@@ -1,4 +1,4 @@
-# Luke Coleman — Portfolio
+# Anjana THarindu — Portfolio
 
 A modern dark-themed developer portfolio built with **Next.js 15** and **TypeScript**.
 
