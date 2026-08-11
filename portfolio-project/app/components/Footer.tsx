@@ -41,7 +41,7 @@ export default function Footer() {
           <a href="#home" className="fl">Anjana<span className="fl-dot" /></a>
           <p className="footer-copy">© {new Date().getFullYear()} Anjana Tharindu. All rights reserved.</p>
           <div className="footer-links">
-            {[["GitHub","https://github.com/darkfighterk"],["LinkedIn","https://www.linkedin.com/in/anjana-tharindu-379ab137a?utm_source=share_via&utm_content=profile&utm_medium=member_android"],["Twitter","https://twitter.com"]].map(([l,h]) => (
+            {[["GitHub","https://github.com/darkfighterk"],["LinkedIn","https://www.linkedin.com/in/anjana-tharindu-379ab137a"],["Twitter","https://twitter.com"]].map(([l,h]) => (
               <a key={l} href={h} className="footer-link" target="_blank" rel="noopener noreferrer">{l}</a>
             ))}
           </div>
